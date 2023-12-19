@@ -1,0 +1,74 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-datasource
+  labels:
+    app.kubernetes.io/name: grafana
+    grafana_datasource: '1'
+data:
+  datasource.yaml: |-
+    apiVersion: 1
+    datasources:
+    - name: Prometheus
+      type: prometheus
+      access: proxy
+      orgId: 1
+      url: http://prometheus:9090
+
+    - name: Loki
+      type: loki
+      access: proxy
+      url: http://loki:3100
+      jsonData:
+        maxLines: 1000
+
+    - name: Tempo
+      type: tempo
+      access: proxy
+      url: http://tempo:3100
+      jsonData:
+        httpMethod: GET
+        tracesToLogs:
+          datasourceUid: Loki
+        tracesToLogsV2:
+          datasourceUid: Loki
+        tracesToMetrics:
+          datasourceUid: Prometheus
+        serviceMap:
+          datasourceUid: Prometheus
+        nodeGraph:
+          enabled: true
+        lokiSearch:
+          datasourceUid: Loki
+
+
+
+#      - name: grafana-dashboard
+#        providers:
+#          - name: "default"
+#            orgId: 1
+#            folder: ""
+#            disableDeletion: true
+#            editable: true
+#            options:
+#              path: /var/lib/grafana/dashboards/default
+#          - name: "client-1"
+#            orgId: 2
+#            folder: ""
+#            disableDeletion: true
+#            editable: false
+#            options:
+#              path: /var/lib/grafana/dashboards/default
+#          - name: "client-2"
+#            orgId: 3
+#            folder: ""
+#            disableDeletion: true
+#            editable: false
+#            options:
+#              path: /var/lib/grafana/dashboards/default
+#      dashboardsConfigMaps:
+#      default: "org-1-dashboards"
+#      client-1: "org-2-dashboards"
+#      client-2: "org-3-dashboards"
+
