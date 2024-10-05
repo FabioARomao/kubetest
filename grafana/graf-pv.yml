@@ -4,7 +4,7 @@ metadata:
   name: grafana-storage
   #labels:
   #  type: local
-  namespace: monitoring
+  namespace: grafana
 spec:
   accessModes:
     - ReadWriteOnce
@@ -20,7 +20,7 @@ metadata:
   name: grafana-datastore
   #labels:
   #  type: local
-  namespace: monitoring
+  namespace: grafana
 spec:
   accessModes:
     - ReadWriteOnce
