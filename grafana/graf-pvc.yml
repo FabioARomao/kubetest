@@ -4,9 +4,9 @@ metadata:
   name: grafana-datastore-pvc
   labels:
     vol: grafana-datastore
-  namespace: longhorn-system
+  namespace: monitoring
 spec:
-  storageClassName: longhorn
+  storageClassName: storagclass
   accessModes:
     - ReadWriteOnce
   resources:
@@ -19,9 +19,9 @@ metadata:
   name: grafana-storage-pvc
   labels:
     vol: grafana-storage
-  namespace: longhorn-system
+  namespace: monitoring
 spec:
-  storageClassName: longhorn
+  storageClassName: storagclass
   accessModes:
     - ReadWriteOnce
   resources:
