@@ -10,7 +10,7 @@ spec:
     - ReadWriteOnce
   capacity:
     storage: 5Gi
-  storageClassName: longhorn
+  storageClassName: standard
   hostPath:
     path: "/datagfst"
 ---
@@ -26,6 +26,6 @@ spec:
     - ReadWriteOnce
   capacity:
     storage: 5Gi
-  storageClassName: longhorn
+  storageClassName: standard
   hostPath:
     path: "/datagfdt"
