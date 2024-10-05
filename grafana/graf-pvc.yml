@@ -6,7 +6,7 @@ metadata:
     vol: grafana-datastore
   namespace: monitoring
 spec:
-  storageClassName: storagclass
+  storageClassName: standard
   accessModes:
     - ReadWriteOnce
   resources:
@@ -21,7 +21,7 @@ metadata:
     vol: grafana-storage
   namespace: monitoring
 spec:
-  storageClassName: storagclass
+  storageClassName: standard
   accessModes:
     - ReadWriteOnce
   resources:
