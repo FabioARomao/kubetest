@@ -24,7 +24,7 @@ spec:
           envFrom:
             - configMapRef:
                 name: graffback-api
-          image: docker.io/romaofr/graffback:1.2
+          image: romaofr/graffback:1.2
           imagePullPolicy: IfNotPresent
           name: graffback-api-web
           ports:
