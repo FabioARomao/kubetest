@@ -31,7 +31,7 @@ spec:
             - name: DATABASE_PASSWORD  # Senha do usuário
               valueFrom:
                 secretKeyRef:
-                  name: postgres-secret  # Nome do secret que contém a senha
+                  name: postgres-db-secret  # Nome do secret que contém a senha
                   key: password
           envFrom:
             - configMapRef:
