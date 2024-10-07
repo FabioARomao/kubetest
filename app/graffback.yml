@@ -45,7 +45,7 @@ spec:
               protocol: TCP
           readinessProbe:
             httpGet:
-              path: /dashboard
+              path: /
               port: 5000
             initialDelaySeconds: 10
             periodSeconds: 10
