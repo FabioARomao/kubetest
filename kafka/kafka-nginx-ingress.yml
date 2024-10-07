@@ -39,7 +39,7 @@ spec:
       serviceAccountName: nginx-ingress-serviceaccount
       containers:
         - name: nginx-ingress-controller
-          image: bitnami/nginx-ingress-controller:1.11.2-debian-12-r5
+          image: ingress-nginx/ingress-nginx:4.11.2
           args:
             - /nginx-ingress-controller
           ports:
