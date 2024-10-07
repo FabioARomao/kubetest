@@ -7,7 +7,7 @@ metadata:
   namespace: kafka
 spec:
   serviceName: zookeeper
-  replicas: 5
+  replicas: 2
   selector:
     matchLabels:
       service: zookeeper
