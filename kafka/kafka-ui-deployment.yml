@@ -1,0 +1,55 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: kafka-ui
+  labels:
+    app: kafka-ui
+  namespace: kafka
+spec:
+  replicas: 1  # Você pode ajustar o número de réplicas conforme necessário
+  selector:
+    matchLabels:
+      app: kafka-ui
+  template:
+    metadata:
+      labels:
+        app: kafka-ui
+    spec:
+      containers:
+        - name: kafka-ui
+          image: provectuslabs/kafka-ui:latest
+          ports:
+            - containerPort: 8080  # Kafka UI geralmente roda na porta 8080, ajuste se necessário
+          env:
+            - name: KAFKA_CLUSTERS_0_NAME
+              value: "kafka-cluster"  # Exemplo de variável de ambiente, ajuste conforme a sua configuração
+            - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
+              value: "kafka:9092"  # O endereço do seu cluster Kafka
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: kafka-ui-service
+  labels:
+    app: kafka-ui
+  namespace: kafka
+spec:
+  type: ClusterIP  # Pode ser alterado para LoadBalancer ou NodePort conforme necessário
+  selector:
+    app: kafka-ui
+  ports:
+    - protocol: TCP
+      port: 80  # Porta que o serviço vai expor internamente
+      targetPort: 8080  # Porta em que o Kafka UI está rodando dentro do container
