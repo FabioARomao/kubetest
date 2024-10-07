@@ -50,9 +50,9 @@ spec:
             initialDelaySeconds: 10
             periodSeconds: 10
             timeoutSeconds: 2
-          volumeMounts:
-            - mountPath: /data
-              name: grafana-storage
+#          volumeMounts:
+#            - mountPath: /data
+#              name: grafana-storage
 #      volumes:
 #        - name: grafana-storage
 #          persistentVolumeClaim:
