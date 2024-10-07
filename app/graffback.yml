@@ -53,7 +53,7 @@ spec:
           volumeMounts:
             - mountPath: /data
               name: grafana-storage
-      volumes:
-        - name: grafana-storage
-          persistentVolumeClaim:
-            claimName: grafana-storage-pvc
+#      volumes:
+#        - name: grafana-storage
+#          persistentVolumeClaim:
+#            claimName: grafana-storage-pvc
