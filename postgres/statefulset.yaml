@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: postgres
-  namespace: keycloak
+  namespace: postgres
 spec:
   serviceName: postgres
   replicas: 1
@@ -23,17 +23,17 @@ spec:
         - name: POSTGRES_DB
           valueFrom:
             secretKeyRef:
-              name: keycloak-db-secret
+              name: postgres-db-secret
               key: DB_DATABASE
         - name: POSTGRES_USER
           valueFrom:
             secretKeyRef:
-              name: keycloak-db-secret
+              name: postgres-db-secret
               key: DB_USER
         - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: keycloak-db-secret
+              name: postgres-db-secret
               key: DB_PASSWORD
         volumeMounts:
         - name: postgres-data
@@ -47,7 +47,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: postgres-data-pvc
-  namespace: keycloak
+  namespace: postgres
 spec:
   accessModes:
     - ReadWriteOnce
