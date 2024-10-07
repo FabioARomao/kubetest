@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: graffback-api-ingress
+  labels:
+    app: graffback-api
+  namespace: postgres
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+
+spec:
+  ingressClassName: nginx  # Classe de Ingress para Nginx
+  rules:
+    - host: graffback-api.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: graffback-api
+                port:
+                  number: 8080
