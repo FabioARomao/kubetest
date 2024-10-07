@@ -69,3 +69,5 @@ resources:
 - promtail/
 - tempo/
 - app/
+- kafka/
+- argo/
