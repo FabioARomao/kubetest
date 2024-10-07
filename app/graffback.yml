@@ -25,9 +25,9 @@ spec:
             - name: DATABASE_PORT  # Porta do PostgreSQL
               value: "5432"
             - name: DATABASE_NAME  # Nome do banco de dados
-              value: mydb
+              value: postgres
             - name: DATABASE_USER  # Nome do usuário
-              value: myuser
+              value: postgres
             - name: DATABASE_PASSWORD  # Senha do usuário
               valueFrom:
                 secretKeyRef:
