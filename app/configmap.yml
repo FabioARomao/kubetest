@@ -1,7 +1,7 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: graffback-api
+#apiVersion: v1
+#kind: ConfigMap
+#metadata:
+#  name: graffback-api
 #data:
 #  PORT: "5000"
 #  RACK_ENV: development
