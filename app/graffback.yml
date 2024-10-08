@@ -22,7 +22,7 @@ spec:
             - name: PORT
               value: "5000"
             - name: DB_HOST  # Host do PostgreSQL
-              value: db.postgres.svc.cluster.local
+              value: db.db.svc.cluster.local
             - name: DB_PORT  # Porta do PostgreSQL
               value: "5432"
             - name: DB_DATABASE  # Nome do banco de dados
