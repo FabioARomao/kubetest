@@ -48,7 +48,7 @@ spec:
               port: 5000
             initialDelaySeconds: 30
             periodSeconds: 300
-            timeoutSeconds: 5
+            timeoutSeconds: 300
 #          volumeMounts:
 #            - mountPath: /data
 #              name: grafana-storage
@@ -70,12 +70,11 @@ metadata:
     prometheus.io/port: "5000"
 spec:
   type: ClusterIP
-  ports:
-  #- name: graffback-api-web
-  - protocol: TCP
-    port: 5000
-    targetPort: 5000
   selector:
     app: graffback-api
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5000
   #selector:
   #  app.kubernetes.io/name: graffback-api
