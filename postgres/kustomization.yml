@@ -9,6 +9,7 @@ resources:
 - service.yml
 - secret.yml
 - statefulset.yml
+- graffback-network-policy.yml
 labels:
 - includeSelectors: true
   pairs:
