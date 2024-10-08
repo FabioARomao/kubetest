@@ -11,7 +11,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - name: graffback-api
+  - name: graffback-api-service
     port: 5000
     targetPort: 5000
   selector:
