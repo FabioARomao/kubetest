@@ -9,7 +9,7 @@ metadata:
     prometheus.io/scrape: "true"
     prometheus.io/port: "5000"
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - name: graffback-api
     port: 5000
