@@ -21,4 +21,4 @@ spec:
               service:
                 name: graffback-api
                 port:
-                  number: 80
+                  number: 8081
