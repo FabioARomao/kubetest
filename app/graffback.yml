@@ -33,7 +33,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: postgres-db-secret  # Nome do secret que contém a senha
-                  key: postgres-password
+                  key: DB_PASSWORD
           envFrom:
             - configMapRef:
                 name: graffback-api
