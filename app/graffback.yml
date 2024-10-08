@@ -23,15 +23,15 @@ spec:
               value: db.postgres.svc.cluster.local
             - name: DB_PORT  # Porta do PostgreSQL
               value: "5432"
-            - name: DB_DATABASE  # Nome do banco de dados
+            - name: POSTGRES_DB  # Nome do banco de dados
               value: postgres
-            - name: DB_USER  # Nome do usuário
+            - name: POSTGRES_USER  # Nome do usuário
               value: postgres
-            - name: DB_PASSWORD  # Senha do usuário
+            - name: POSTGRES_PASSWORD  # Senha do usuário
               valueFrom:
                 secretKeyRef:
                   name: postgres-db-secret  # Nome do secret que contém a senha
-                  key: DB_PASSWORD
+                  key: POSTGRES_PASSWORD
           envFrom:
             - configMapRef:
                 name: graffback-api
