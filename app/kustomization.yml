@@ -5,6 +5,8 @@ resources:
 - graffback.yml
 - configmap.yml
 - service.yml
+- graffback-ingress.yml
+- secrets.yml
 labels:
 - includeSelectors: true
   pairs:

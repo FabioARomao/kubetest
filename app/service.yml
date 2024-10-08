@@ -4,6 +4,7 @@ metadata:
   name: graffback-api
   labels:
     app.kubernetes.io/name: graffback-api
+  namespace: postgres
   annotations:
     prometheus.io/scrape: "true"
     prometheus.io/port: "5000"
