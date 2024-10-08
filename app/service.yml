@@ -11,8 +11,11 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - name: graffback-api-web
+  #- name: graffback-api-web
+  - protocol: TCP
     port: 5000
     targetPort: 5000
   selector:
-    app.kubernetes.io/name: graffback-api
+    app: graffback-api-web
+  #selector:
+  #  app.kubernetes.io/name: graffback-api

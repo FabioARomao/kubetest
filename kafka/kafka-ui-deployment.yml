@@ -45,6 +45,9 @@ metadata:
   labels:
     app: kafka-ui
   namespace: kafka
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8080"
 spec:
   type: ClusterIP  # Pode ser alterado para LoadBalancer ou NodePort conforme necessário
   selector:
