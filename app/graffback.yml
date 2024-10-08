@@ -20,15 +20,15 @@ spec:
         - env:
             - name: PORT
               value: "5000"
-            - name: DATABASE_HOST  # Host do PostgreSQL
+            - name: DB_HOST  # Host do PostgreSQL
               value: db.postgres.svc.cluster.local
-            - name: DATABASE_PORT  # Porta do PostgreSQL
+            - name: DB_PORT  # Porta do PostgreSQL
               value: "5432"
-            - name: DATABASE_NAME  # Nome do banco de dados
+            - name: DB_DATABASE  # Nome do banco de dados
               value: postgres
-            - name: DATABASE_USER  # Nome do usuário
+            - name: DB_USER  # Nome do usuário
               value: postgres
-            - name: DATABASE_PASSWORD  # Senha do usuário
+            - name: DB_PASSWORD  # Senha do usuário
               valueFrom:
                 secretKeyRef:
                   name: postgres-db-secret  # Nome do secret que contém a senha
