@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: graffback-api-ingress
   labels:
-    app: graffback-api
+    app: graffback-api-web
   namespace: postgres
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
@@ -19,6 +19,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: graffback-api-web
+                name: graffback-api
                 port:
                   number: 5000
