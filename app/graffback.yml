@@ -58,3 +58,26 @@ spec:
 #        - name: grafana-storage
 #          persistentVolumeClaim:
 #            claimName: grafana-storage-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: graffback-api-service
+  labels:
+    app: graffback-api
+    #app.kubernetes.io/name: graffback-api
+  namespace: postgres
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "5000"
+spec:
+  type: ClusterIP
+  ports:
+  #- name: graffback-api-web
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+  selector:
+    app: graffback-api
+  #selector:
+  #  app.kubernetes.io/name: graffback-api
