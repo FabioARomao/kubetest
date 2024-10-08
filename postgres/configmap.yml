@@ -4,7 +4,7 @@ metadata:
   name: postgres-config
   namespace: postgres
 data:
-  DB_ADDR: postgres
+  DB_ADDR: db
   DB_PORT: '5432'
   DB_DATABASE: postgres
   DB_USER: postgres
