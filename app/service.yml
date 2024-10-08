@@ -16,6 +16,6 @@ spec:
     port: 5000
     targetPort: 5000
   selector:
-    app: graffback-api-web
+    app: graffback-api
   #selector:
   #  app.kubernetes.io/name: graffback-api
