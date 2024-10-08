@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: postgres
+  name: db
   namespace: postgres
 spec:
   serviceName: postgres
   replicas: 1
   selector:
     matchLabels:
-      app: postgres
+      app: db
   template:
     metadata:
       labels:
-        app: postgres
+        app: db
     spec:
       containers:
       - name: postgres
