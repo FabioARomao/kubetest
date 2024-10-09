@@ -3,3 +3,4 @@ tls.crt
 tls.csr
 tls.key
 .terraform
+terraform
