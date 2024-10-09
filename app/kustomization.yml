@@ -7,7 +7,6 @@ resources:
 - service.yml
 - graffback-ingress.yml
 - secrets.yml
-- graffback-network-policy.yml
 labels:
 - includeSelectors: true
   pairs:
