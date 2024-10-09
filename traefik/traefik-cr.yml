@@ -22,11 +22,11 @@ rules:
       - list
       - watch
   - apiGroups:
-      - extensions
+    - extensions
     resources:
-      - ingresses/status
+    - ingresses/status
     verbs:
-      - update
+    - update
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -42,6 +42,6 @@ roleRef:
   kind: ClusterRole
   name: traefik-ingress-controller
 subjects:
-  - kind: ServiceAccount
-    name: traefik-ingress-controller
-    namespace: kube-system
+- kind: ServiceAccount
+  name: traefik-ingress-controller
+  namespace: kube-system
