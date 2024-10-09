@@ -150,7 +150,7 @@ spec:
         ports:
         - containerPort: 7000
           name: webhook
-        - containerPort: 8080
+        - containerPort: 8089
           name: metrics
         securityContext:
           allowPrivilegeEscalation: false

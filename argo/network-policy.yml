@@ -26,7 +26,7 @@ spec:
     ports:
     - port: 7000
       protocol: TCP
-    - port: 8080
+    - port: 8089
       protocol: TCP
   podSelector:
     matchLabels:
