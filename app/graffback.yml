@@ -74,7 +74,7 @@ spec:
     app: graffback-api
   ports:
   - protocol: TCP
-    port: 8080
+    port: 80
     targetPort: 5000
   #selector:
   #  app.kubernetes.io/name: graffback-api
