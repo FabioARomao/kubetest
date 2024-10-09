@@ -69,12 +69,12 @@ metadata:
     prometheus.io/scrape: "true"
     prometheus.io/port: "5000"
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: graffback-api
   ports:
   - protocol: TCP
-    port: 80
+    port: 8080
     targetPort: 5000
   #selector:
   #  app.kubernetes.io/name: graffback-api
