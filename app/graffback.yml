@@ -69,7 +69,7 @@ metadata:
     prometheus.io/scrape: "true"
     prometheus.io/port: "5000"
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: graffback-api
   ports:
