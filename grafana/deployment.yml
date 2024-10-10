@@ -54,6 +54,12 @@ spec:
             mountPath: /etc/grafana/provisioning/datasources/datasource.yaml
             subPath: datasource.yaml
             readOnly: false
+          - name: grafana-dashboards
+            mountPath: /var/lib/grafana/dashboards
+            subPath: grafana-dashboard.json
+          - name: grafana-dashboard-provisioning
+            mountPath: /etc/grafana/provisioning/dashboards
+            subPath: dashboards.yaml
         securityContext:
           runAsUser: 0
           allowPrivilegeEscalation: false
@@ -77,3 +83,9 @@ spec:
             items:
               - key: dashboards.yaml
                 path: dashboards.yaml
+        - name: grafana-dashboards
+          configMap:
+            name: grafana-dashboards
+            items:
+              - key: grafana-dashboard.json
+                path: grafana-dashboard.json
