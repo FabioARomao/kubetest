@@ -8,6 +8,8 @@ resources:
 - graf-pv.yml
 - graf-pvc.yml
 - secret.yml
+- namespace.yml
+- account.yml
 labels:
 - includeSelectors: true
   pairs:

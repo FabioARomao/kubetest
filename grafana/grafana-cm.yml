@@ -3,6 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: grafana-datasource
+  namespace: monitoring
   labels:
     app.kubernetes.io/name: grafana
     grafana_datasource: '1'
