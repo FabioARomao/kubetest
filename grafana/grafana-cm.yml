@@ -41,32 +41,40 @@ data:
           enabled: true
         lokiSearch:
           datasourceUid: Loki
-
-      - name: grafana-dashboard
-        providers:
-          - name: "default"
-            orgId: 1
-            folder: ""
-            disableDeletion: true
-            editable: true
-            options:
-              path: /var/lib/grafana/dashboards
-          - name: "client-1"
-            orgId: 2
-            folder: ""
-            disableDeletion: true
-            editable: false
-            options:
-              path: /var/lib/grafana/dashboards
-          - name: "client-2"
-            orgId: 3
-            folder: ""
-            disableDeletion: true
-            editable: false
-            options:
-              path: /var/lib/grafana/dashboards
-      dashboardsConfigMaps:
-      default: "org-1-dashboards"
-      client-1: "org-2-dashboards"
-      client-2: "org-3-dashboards"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboard-provisioning
+  namespace: monitoring
+data:
+  dashboards.yaml: |
+    apiVersion: 1
+      providers:
+        - name: 'default'
+          orgId: 1
+          folder: ''
+          type: file
+          disableDeletion: false
+          updateIntervalSeconds: 10
+          options:
+            path: /var/lib/grafana/dashboards
+#    - name: "client-1"
+#      orgId: 2
+#      folder: ""
+#      disableDeletion: true
+#      editable: false
+#      options:
+#        path: /var/lib/grafana/dashboards
+#    - name: "client-2"
+#      orgId: 3
+#      folder: ""
+#      disableDeletion: true
+#      editable: false
+#      options:
+#        path: /var/lib/grafana/dashboards
+#      dashboardsConfigMaps:
+#      default: "org-1-dashboards"
+#      client-1: "org-2-dashboards"
+#      client-2: "org-3-dashboards"
 

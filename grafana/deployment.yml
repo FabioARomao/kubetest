@@ -71,3 +71,9 @@ spec:
         - name: grafana-datastore
           configMap:
             name: grafana-datasource
+        - name: grafana-dashboard-provisioning
+          configMap:
+            name: grafana-dashboard-provisioning
+            items:
+              - key: dashboards.yaml
+                path: dashboards.yaml
