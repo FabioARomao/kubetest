@@ -4,3 +4,4 @@ tls.csr
 tls.key
 .terraform
 terraform
+*.tfstate
