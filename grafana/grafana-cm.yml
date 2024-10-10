@@ -59,23 +59,23 @@ data:
           updateIntervalSeconds: 10
           options:
             path: /var/lib/grafana/dashboards
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: grafana-dashboard-provisioning
-  namespace: monitoring
-data:
-  dashboard-volumes.yml: |
-    apiVersion: 1
-      providers:
-        - name: "client-1"
-          orgId: 1
-          folder: ""
-          disableDeletion: true
-          editable: false
-          options:
-            path: /var/lib/grafana/dashboards
+#---
+#apiVersion: v1
+#kind: ConfigMap
+#metadata:
+#  name: grafana-dashboard-provisioning
+#  namespace: monitoring
+#data:
+#  dashboard-volumes.yml: |
+#    apiVersion: 1
+#      providers:
+#        - name: "client-1"
+#          orgId: 1
+#          folder: ""
+#          disableDeletion: true
+#          editable: false
+#          options:
+#            path: /var/lib/grafana/dashboards
 #    - name: "client-2"
 #      orgId: 3
 #      folder: ""
