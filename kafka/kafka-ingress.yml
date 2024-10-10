@@ -1,24 +1,24 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: kafka-ui-ingress
-  labels:
-    app: kafka-ui
-  namespace: kafka
-  annotations:
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /
-
-spec:
-  ingressClassName: nginx  # Classe de Ingress para Nginx
-  rules:
-    - host: kafka-ui.nip.io
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: kafka-ui-service
-                port:
-                  number: 8080
+#apiVersion: networking.k8s.io/v1
+#kind: Ingress
+#metadata:
+#  name: kafka-ui-ingress
+#  labels:
+#    app: kafka-ui
+#  namespace: kafka
+#  annotations:
+#    nginx.ingress.kubernetes.io/use-regex: "true"
+#    nginx.ingress.kubernetes.io/rewrite-target: /
+#
+#spec:
+#  ingressClassName: nginx  # Classe de Ingress para Nginx
+#  rules:
+#    - host: kafka-ui.nip.io
+#      http:
+#        paths:
+#          - path: /
+#            pathType: Prefix
+#            backend:
+#              service:
+#                name: kafka-ui-service
+#                port:
+#                  number: 8080
