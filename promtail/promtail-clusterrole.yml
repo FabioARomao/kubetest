@@ -18,4 +18,3 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: promtail
-    namespace: monitoring

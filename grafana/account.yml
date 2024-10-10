@@ -4,5 +4,4 @@ metadata:
   name: grafana
   labels:
     app.kubernetes.io/name: grafana
-  namespace: monitoring
   annotations: {}
