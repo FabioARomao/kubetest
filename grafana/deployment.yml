@@ -56,7 +56,7 @@ spec:
             readOnly: false
           - name: grafana-dashboards
             mountPath: /var/lib/grafana/dashboards
-            subPath: dashboard-volumespv.json
+            subPath: grafana-dashboard.json
           #- name: grafana-dashboard-provisioning
           #  mountPath: /etc/grafana/provisioning/dashboards
           #  subPath: dashboards.yaml
@@ -81,5 +81,5 @@ spec:
           configMap:
             name: grafana-dashboards
             items:
-              - key: dashboard-volumespv.json
-                path: dashboard-volumespv.json
+              - key: grafana-dashboard.json
+                path: grafana-dashboard.json

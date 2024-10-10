@@ -41,43 +41,35 @@ data:
           enabled: true
         lokiSearch:
           datasourceUid: Loki
-#---
-#apiVersion: v1
-#kind: ConfigMap
-#metadata:
-#  name: grafana-dashboards
-#  namespace: monitoring
-#data:
-#  dashboard-volumespv.json: |
-#    apiVersion: 1
-#      providers:
-#        - name: 'default'
-#          orgId: 1
-#          folder: ''
-#          type: file
-#          disableDeletion: false
-#          updateIntervalSeconds: 10
-#          options:
-#            path: /var/lib/grafana/dashboards
-#---
-#apiVersion: v1
-#kind: ConfigMap
-#metadata:
-#  name: grafana-dashboard-provisioning
-#  namespace: monitoring
-#data:
-#  dashboard-volumes.yml: |
-#    apiVersion: 1
-#      providers:
-#        - name: "client-1"
-#          orgId: 1
-#          folder: ""
-#          disableDeletion: true
-#          editable: false
-#          options:
-#            path: /var/lib/grafana/dashboards
-#      dashboardsConfigMaps:
-#      default: "org-1-dashboards"
-#      client-1: "org-2-dashboards"
-#      client-2: "org-3-dashboards"
-
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboards
+  #namespace: monitoring  # Namespace correto
+  labels:
+    grafana_dashboard: "1"
+data:
+  grafana-dashboard.json: |
+    {
+      "id": null,
+      "title": "Prometheus Metrics",
+      "uid": "prometheus-dashboard",
+      "timezone": "browser",
+      "schemaVersion": 16,
+      "version": 0,
+      "refresh": "5s",
+      "panels": [
+        {
+          "type": "graph",
+          "title": "CPU Usage",
+          "targets": [
+            {
+              "expr": "rate(node_cpu_seconds_total{mode='system'}[5m])",
+              "legendFormat": "{{cpu}}"
+            }
+          ],
+          "datasource": "Prometheus"
+        }
+      ]
+    }
