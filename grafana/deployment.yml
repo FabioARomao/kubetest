@@ -81,11 +81,11 @@ spec:
           configMap:
             name: grafana-dashboard-provisioning
             items:
-              - key: dashboards.yaml
-                path: dashboards.yaml
+              - key: dashboard-volumes.json
+                path: dashboard-volumes.json
         - name: grafana-dashboards
           configMap:
             name: grafana-dashboards
             items:
-              - key: grafana-dashboard.json
-                path: grafana-dashboard.json
+              - key: dashboard-volumespv.json
+                path: dashboard-volumespv.json
