@@ -9,7 +9,6 @@ resources:
 - graf-pvc.yml
 - secret.yml
 - account.yml
-- dashboard-volumes.yml
 - dashboard-volumespv.yml
 labels:
 - includeSelectors: true
