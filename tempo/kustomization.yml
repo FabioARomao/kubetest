@@ -7,7 +7,6 @@ resources:
 - tempo-cm.yml
 - service.yml
 - statefulset.yml
-- namespace.yml
 labels:
 - includeSelectors: true
   pairs:
