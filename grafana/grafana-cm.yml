@@ -45,7 +45,7 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: grafana-dashboard-provisioning
+  name: grafana-dashboards
   namespace: monitoring
 data:
   dashboard-volumespv.json: |
@@ -76,13 +76,6 @@ data:
 #          editable: false
 #          options:
 #            path: /var/lib/grafana/dashboards
-#    - name: "client-2"
-#      orgId: 3
-#      folder: ""
-#      disableDeletion: true
-#      editable: false
-#      options:
-#        path: /var/lib/grafana/dashboards
 #      dashboardsConfigMaps:
 #      default: "org-1-dashboards"
 #      client-1: "org-2-dashboards"
