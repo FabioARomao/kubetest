@@ -10,6 +10,20 @@ resource "helm_release" "argocd" {
   values = [file("values/argocd.yaml")]
 }
 
+resource "helm_release" "nginx" {
+  name       = "my-nginx"
+  repository = "https://charts.helm.sh/stable"
+  chart      = "nginx-ingress"
+  namespace  = "default"
+
+  values = [
+    <<EOF
+controller:
+  replicaCount: 1
+EOF
+  ]
+}
+
 resource "argocd_application" "kubetest" {
   metadata {
     name      = "kubetest"
