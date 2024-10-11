@@ -20,4 +20,4 @@ spec:
               service:
                 name: kafka-ui-service
                 port:
-                  number: 8081
+                  number: 8080
