@@ -6,6 +6,7 @@ resources:
 - namespace.yml
 - promtail-clusterrole.yml
 - pvc.yml
+- pv.yml
 - service.yml
 - secret.yml
 - statefulset.yml
