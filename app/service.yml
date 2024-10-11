@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: graffback-api-service
   labels:
-    app: graffback-api
+    app: graffback-api-service
     #app.kubernetes.io/name: graffback-api
   namespace: postgres
   annotations:
