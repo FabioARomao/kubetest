@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: graffback-api-ingress
   labels:
-    app: graffback-api
+    app: graffback-api-service
   #namespace: postgres
   #annotations:
   #  nginx.ingress.kubernetes.io/use-regex: "true"
