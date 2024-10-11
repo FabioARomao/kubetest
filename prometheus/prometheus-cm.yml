@@ -5,6 +5,7 @@ metadata:
   name: prometheus
   labels:
     app.kubernetes.io/name: prometheus
+  namespace: monitoring
 data:
   prometheus.yml: |-
     global:

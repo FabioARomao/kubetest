@@ -4,7 +4,7 @@ metadata:
   name: prometheus-storage
   labels:
     type: local
-  namespace: default
+  namespace: monitoring
 spec:
   storageClassName: longhorn
   capacity:

@@ -4,7 +4,7 @@ metadata:
   name: prom-storage-pvc
   labels:
     vol: prometheus-storage
-  namespace: default
+  namespace: monitoring
 spec:
   storageClassName: longhorn
   accessModes:
