@@ -8,7 +8,6 @@ metadata:
   #annotations:
   #  nginx.ingress.kubernetes.io/use-regex: "true"
   #  nginx.ingress.kubernetes.io/rewrite-target: /
-
 spec:
   ingressClassName: nginx  # Classe de Ingress para Nginx
   rules:
