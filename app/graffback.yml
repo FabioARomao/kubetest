@@ -3,19 +3,16 @@ kind: Deployment
 metadata:
   labels:
     app: graffback-api-service
-    process: web
   name: graffback-api-web
   namespace: postgres
 spec:
   selector:
     matchLabels:
       app: graffback-api-service
-      process: web
   template:
     metadata:
       labels:
         app: graffback-api-service
-        process: web
     spec:
       containers:
         - env:
