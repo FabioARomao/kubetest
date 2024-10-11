@@ -4,6 +4,7 @@ metadata:
   name: postgres-storage
   labels:
     type: local
+  namespace: postgres
 spec:
   storageClassName: standard
   capacity:

@@ -4,6 +4,7 @@ metadata:
   name: postgres-pvc
   labels:
     vol: postgres-storage
+  namespace: postgres
 spec:
   storageClassName: standard
   accessModes:
