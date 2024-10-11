@@ -6,7 +6,7 @@ metadata:
     vol: prometheus-storage
   namespace: monitoring
 spec:
-  storageClassName: longhorn
+  storageClassName: standard
   accessModes:
     - ReadWriteOnce
   resources:

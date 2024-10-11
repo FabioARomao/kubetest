@@ -6,7 +6,7 @@ metadata:
     type: local
   namespace: monitoring
 spec:
-  storageClassName: longhorn
+  storageClassName: standard
   capacity:
     storage: 5Gi
   accessModes:
