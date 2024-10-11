@@ -3,19 +3,19 @@ kind: Service
 metadata:
   name: graffback-api-service
   labels:
-    #app: graffback-api
-    app.kubernetes.io/name: graffback-api
+    app: graffback-api
+    #app.kubernetes.io/name: graffback-api
   namespace: postgres
   annotations:
     prometheus.io/scrape: "true"
     prometheus.io/port: "5000"
 spec:
   type: ClusterIP
-  #selector:
-  #  app: graffback-api
+  selector:
+    app: graffback-api
   ports:
   - protocol: TCP
     port: 8080
     targetPort: 5000
-  selector:
-    app.kubernetes.io/name: graffback-api
+  #selector:
+  #  app.kubernetes.io/name: graffback-api
