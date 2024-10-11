@@ -1,7 +1,6 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  namespace: monitoring
   name: graffback-api-role
 rules:
 - apiGroups: ["discovery.k8s.io"]
@@ -12,11 +11,9 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: graffback-api-rolebinding
-  namespace: monitoring
 subjects:
 - kind: ServiceAccount
   name: postgres  # Nome da conta de serviço do seu pod
-  namespace: monitoring
 roleRef:
   kind: Role
   name: graffback-api-role

@@ -4,7 +4,6 @@ metadata:
   name: grafana-datastore-pvc
   labels:
     vol: grafana-datastore
-  namespace: monitoring
 spec:
   storageClassName: standard
   accessModes:
@@ -19,7 +18,6 @@ metadata:
   name: grafana-storage-pvc
   labels:
     vol: grafana-storage
-  namespace: monitoring
 spec:
   storageClassName: standard
   accessModes:

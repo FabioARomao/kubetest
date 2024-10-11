@@ -13,7 +13,6 @@ commonAnnotations:
   endpointslice.kubernetes.io/managed-by: controller
   pod-security.kubernetes.io/audit: baseline
   pod-security.kubernetes.io/warn-version: latest
-#namespace: monitoring
 
 # Generate a ConfigMap for each dashboard
 configMapGenerator:

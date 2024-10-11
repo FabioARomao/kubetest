@@ -5,7 +5,6 @@ metadata:
   name: prometheus
   labels:
     app.kubernetes.io/name: prometheus
-  namespace: monitoring
   annotations:
     prometheus.io/scrape: "true"
     prometheus.io/port: "9090"

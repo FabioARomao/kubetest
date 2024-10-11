@@ -3,7 +3,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: prometheus
-  namespace: monitoring
 spec:
   revisionHistoryLimit: 1
   replicas: 1

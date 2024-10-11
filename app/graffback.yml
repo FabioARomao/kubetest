@@ -5,7 +5,6 @@ metadata:
     app.kubernetes.io/name: graffback-api
     process: web
   name: graffback-api-web
-  namespace: monitoring
 spec:
   selector:
     matchLabels:
@@ -57,7 +56,6 @@ metadata:
   labels:
     app: graffback-api
     #app.kubernetes.io/name: graffback-api
-  namespace: monitoring
   annotations:
     prometheus.io/scrape: "true"
     prometheus.io/port: "5000"

@@ -4,7 +4,6 @@ metadata:
   name: tempo
   labels:
     app.kubernetes.io/name: tempo
-  namespace: monitoring
   annotations:
     prometheus.io/port: prom-metrics
     prometheus.io/scrape: "true"
