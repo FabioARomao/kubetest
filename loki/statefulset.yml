@@ -5,6 +5,7 @@ metadata:
   name: loki
   labels:
     app.kubernetes.io/name: loki
+  namespace: monitoring
 spec:
   revisionHistoryLimit: 1
   podManagementPolicy: OrderedReady

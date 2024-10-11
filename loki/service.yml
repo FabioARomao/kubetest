@@ -5,6 +5,7 @@ metadata:
   name: loki
   labels:
     app.kubernetes.io/name: loki
+  namespace: monitoring
   annotations:
     prometheus.io/scrape: "true"
     prometheus.io/port: "3100"
