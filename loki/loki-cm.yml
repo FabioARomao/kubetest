@@ -4,7 +4,6 @@ metadata:
   name: loki
   labels:
     app.kubernetes.io/name: loki
-  namespace: monitoring
 data:
   loki.yaml: |
     auth_enabled: false
