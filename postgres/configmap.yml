@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: postgres-config
-  namespace: postgres
+  namespace: monitoring
 data:
   DB_ADDR: db
   DB_PORT: '5432'
