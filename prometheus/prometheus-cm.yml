@@ -151,6 +151,14 @@ data:
       static_configs:
       - targets: ['localhost:9113']
 
-    - job_name: rails-api
+    - job_name: graffback-api
       static_configs:
       - targets: ['192.168.49.2:32371']
+
+    - job_name: kafka-ui
+      static_configs:
+      - targets: ['localhost:80']
+
+    - job_name: tempo
+      static_configs:
+      - targets: ['localhost:3100']
