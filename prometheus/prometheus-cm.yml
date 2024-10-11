@@ -153,7 +153,7 @@ data:
 
     - job_name: graffback-api
       static_configs:
-      - targets: ['192.168.49.2:32371']
+      - targets: ['192.168.49.2:8080']
 
     - job_name: kafka-ui
       static_configs:
