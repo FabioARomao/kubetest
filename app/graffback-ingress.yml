@@ -5,9 +5,9 @@ metadata:
   labels:
     app: graffback-api-service
   #namespace: postgres
-  #annotations:
+  annotations:
   #  nginx.ingress.kubernetes.io/use-regex: "true"
-  #  nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx  # Classe de Ingress para Nginx
   rules:
