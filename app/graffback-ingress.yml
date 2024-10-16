@@ -20,4 +20,4 @@ spec:
               service:
                 name: graffback-api-service
                 port:
-                  number: 5000
+                  number: 80
